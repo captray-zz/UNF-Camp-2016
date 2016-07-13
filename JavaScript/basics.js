@@ -1,119 +1,75 @@
 
+/* Data Types */
 /*
-
-Data Types
-
-    Boolean
-    Null
-    Undefined
-    Number
-    String
-*/
-
-//Basic variable assignment
-var x = 'Hello, World!';
-
-console.log(x);
-
-//but don't do this...
-x = 'Oh crap. Global variable.'
-
-//objects
-var person = {
-    name: 'Krombopulos Michael',
-    occupation: 'Interstellar assassin',
-    quotes: [
-        'Oh boy, here I go killin\' again!',
-        'I\'m very discreet. I have no code of ethics. ' +
-        'I will kill anyone, anywhere. Children, animals, old people, ' +
-        'doesn\'t matter. I just love killing.'
-    ],
-    toString: function() {
-        return this.name + ' ' + this.occupation;
-    }
-};
-
-//functions
-function add(x,y) {
-    var result = x + y;
-    console.log(result);
-};
-
-var Yahoo = Yahoo || {};
-
-Yahoo.DataServices = {
-
-}
-
-
-
-//NOTE: Functions are FIRST CLASS Objects in JS. Meaning you can pass them as arguments.
-
-var obj = {
-    property: 'value',
-
-}
-
-
-
-
-
-//logic
-if(5 > 1) {
-    console.log('yep');
-}
-
-if(1) {
-    console.log('yep');
-}
-
-if(-1) {
-    console.log('yep');
-}
-
-if(0) {
-    console.log('yep');
-}
-
-if() {
-
-} else if() {
-
-} else {
-
-}
-
-var i = 10;
-while(i--) { console.log(i); }
-
-for(var i = 0; i < 10; i++) { console.log(i); }
-
-//arrays
-var arr = [];
-var arr = new Array();
-var arr = Array();
-
-arr = [1,2,3,4,5];
-
-arr.forEach(function(element){
-    console.log(element);
-});
-
-//tips and debugging
-console.log();
-
-alert('yo');
-
-debugger;
-
-/* Footguns
-* https://github.com/stevekwan/best-practices/blob/master/javascript/gotchas.md
-* Type coercion
+*   PRIMITIVES
 *
-* Truthiness and Equality
+*   String, Number, Boolean, Undefined, Null
 *
-* Closures
+*   NON-PRIMITIVE DATA TYPES
+*
+*   Function, Object, RegExp
 *
 * */
 
+//variable assignment
+var x = 5;
 
+var y = 'string';
+
+var z = {}; // <--- WAT?
+
+
+/* Objects */
+
+var obj = {
+    propertyOne: 1,
+    propertyTwo: "some string",
+    propertyThree: 'some other string with single quotes',
+    "propertyWithQuotes": 'why the quotes?' //hint: reserved,
+    propertyThatIsAFunction: function() {
+        console.log('wat')
+    }
+};
+
+/* Functions */
+
+var theThing = 7;
+
+function doThatThingWithTheThing(theThing) {
+    console.log(theThing * theThing);
+}
+
+function iCanHaz() {
+
+    var x = 5;
+
+    function noYouCanHazNot() {
+        var y = 7; //QUESTION: How can we print this?
+
+        console.log(x);
+    }
+
+    noYouCanHazNot();
+
+    console.log(y);
+}
+
+function gimmeTheFunc(someFunc) {
+    someFunc();
+}
+
+function datFunc() {
+    console.log('da func');
+}
+
+gimmeTheFunc(datFunc);
+
+
+/* Helpers for sanity checks */
+
+alert('Test!');
+
+debugger; //stops execution just like a breakpoint
+
+var x = 5;
+console.log(x); //5
